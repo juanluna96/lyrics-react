@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 
-const Formulario = () => {
+const Formulario = ({ setBusquedaLetra }) => {
 
 
     const [busqueda, setBusqueda] = useState({
@@ -34,6 +34,7 @@ const Formulario = () => {
         setError(false);
 
         // Todo bien, pasar al componente principal
+        setBusquedaLetra(busqueda);
     }
 
     return (
@@ -43,6 +44,7 @@ const Formulario = () => {
                     <form className="pt-5 pb-2 mb-3 text-white bg-transparent col card" onSubmit={ buscarInformacion }>
                         <fieldset>
                             <legend className="text-center font-weight-bold text-uppercase">Buscador letras Canciones</legend>
+                            { error ? <p className="p-2 mt-2 alert alert-primary col-12" role="alert">Todos los campos son obligatorios</p> : null }
 
                             <div className="row">
                                 <div className="col-md-6">
