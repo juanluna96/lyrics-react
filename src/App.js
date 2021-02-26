@@ -3,6 +3,7 @@ import Formulario from './components/Formulario';
 
 import axios from 'axios';
 import Cancion from './components/Cancion';
+import Info from './components/Info';
 
 function App() {
 
@@ -27,11 +28,11 @@ function App() {
       ]);
 
       setLetra(letra.data.lyrics);
-      setInfoArtista(informacion.data.artist[0]);
+      setInfoArtista(informacion.data.artists[0]);
     };
 
     consultarAPILetra();
-  }, [busquedaLetra]);
+  }, [busquedaLetra, infoArtista]);
 
   return (
     <Fragment>
@@ -40,7 +41,7 @@ function App() {
       <div className="container mt-5">
         <div className="row">
           <div className="col-md-6">
-            1
+            <Info infoArtista={ infoArtista }></Info>
           </div>
           <div className="col-md-6">
             <Cancion letra={ letra }></Cancion>

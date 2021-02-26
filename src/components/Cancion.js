@@ -1,4 +1,10 @@
 import React, { Fragment } from 'react'
+import styled from 'styled-components';
+
+const Letra = styled.p`
+  max-height: 1180px;
+  overflow-y: scroll;
+`;
 
 const Cancion = ({ letra }) => {
 
@@ -7,7 +13,7 @@ const Cancion = ({ letra }) => {
     return (
         <Fragment>
             <h2>Letra canción</h2>
-            <p className="letra">{ letra }</p>
+            <Letra className="letra">{ letra }</Letra>
         </Fragment>
     )
 }
